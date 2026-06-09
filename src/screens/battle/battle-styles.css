@@ -1,0 +1,102 @@
+body {
+  background: #212121;
+  background: linear-gradient(
+    25deg,
+    rgba(33, 33, 33, 1) 50%,
+    rgba(0, 46, 3, 1) 100%
+  );
+  font-family: Arial;
+  color: white;
+}
+
+.battle-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.enemy-area,
+.player-area {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+}
+
+/* inimigo (topo) */
+.enemy-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+}
+
+/* jogador (baixo) */
+.player-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+/* status */
+.status-box {
+  width: 150px;
+  margin-bottom: 1rem;
+}
+
+.status-box p {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.enemy-area .status-box p {
+  text-align: right;
+}
+
+.player-area .status-box p {
+  text-align: left;
+}
+
+/* campo central */
+.battle-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* dados */
+.dice-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* controles */
+.controls {
+  margin-top: 10px;
+}
+
+.controls button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.controls button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  border-left: none;
+}
+
+@media (max-width: 768px) {
+  .battle-container {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    /* gap: 20px; */
+  }
+
+  .status-box {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,60 @@
+.dice {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: aliceblue;
+
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.dice.dark {
+  background-color: #212121;
+}
+
+.dice-content {
+  width: 60px;
+  height: 60px;
+
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  justify-items: center;
+  align-items: center;
+}
+
+.point {
+  width: 12px;
+  height: 12px;
+  background: black;
+  border-radius: 50%;
+}
+
+.dice.dark .point {
+  background-color: white;
+}
+
+/* animação */
+.rolling {
+  animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
