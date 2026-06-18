@@ -1,0 +1,134 @@
+.dice-test-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    25deg,
+    rgba(33, 33, 33, 1) 50%,
+    rgba(0, 46, 3, 1) 100%
+  );
+
+  font-family: Arial;
+  color: white;
+}
+
+/* STATUS */
+.dice-test-status {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  height: 130px;
+}
+
+.dice-test-status h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dice-test-status p {
+  font-size: 1.2rem;
+  margin: 4px 0;
+}
+
+/* destaque resultado */
+.result-success {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.result-fail {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* PROBABILIDADE */
+.probability {
+  margin-top: 8px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* DADOS */
+.dice-test-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CONTROLES (quantidade de dados) */
+.dice-controls {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.dice-controls button {
+  padding: 8px 16px;
+  font-size: 1.2rem;
+}
+
+.dice-controls button:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dice-controls button:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-left: none;
+}
+
+/* SLIDER */
+.slider-container {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.slider-container label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.slider-container input {
+  width: 200px;
+}
+
+/* BOTÃO */
+.roll-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background: #2e7d32;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.roll-button:hover {
+  background: #388e3c;
+}
+
+.roll-button:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .dice-test-status h1 {
+    font-size: 1.5rem;
+  }
+
+  .dice-test-row {
+    gap: 8px;
+  }
+
+  .slider-container input {
+    width: 100%;
+  }
+}
