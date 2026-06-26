@@ -3,13 +3,16 @@ import { RouterProvider } from "./contexts/router-context";
 import { RouterView } from "./router/router-view";
 import { routes, type RouteNames } from "./router/routes";
 
+import "./App.css";
+
 export function App() {
   return (
-    <RouterProvider initialRoute="dice-test" routes={routes}>
+    <RouterProvider initialRoute="notes" routes={routes}>
       <Navbar<RouteNames>
         links={[
-          { label: "Batalha", to: "battle" },
-          { label: "Teste", to: "dice-test" },
+          { label: "Anotações", to: "notes" },
+          { label: "Teste de Perícia", to: "dice-test" },
+          { label: "Combate", to: "battle" },
         ]}
       />
       <RouterView routes={routes} />

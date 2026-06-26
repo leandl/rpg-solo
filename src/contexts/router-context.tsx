@@ -6,8 +6,10 @@ import {
   type ReactNode,
 } from "react";
 
-export type Routes<T extends string> = Record<T, ReactNode> & {
-  "not-found": ReactNode;
+type ReactComponent = () => ReactNode;
+
+export type Routes<T extends string> = Record<T, ReactComponent> & {
+  "not-found": ReactComponent;
 };
 
 export type RouterContextData<T extends string> = {
