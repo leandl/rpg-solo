@@ -11,7 +11,8 @@ export function App() {
       <Navbar<RouteNames>
         links={[
           { label: "Anotações", to: "notes" },
-          { label: "Teste de Perícia", to: "dice-test" },
+          { label: "Teste de Perícia", to: "skill-test" },
+          { label: "Teste de Sanidade", to: "sanity-test" },
           { label: "Combate", to: "battle" },
         ]}
       />

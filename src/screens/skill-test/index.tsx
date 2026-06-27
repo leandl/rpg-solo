@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from "react";
 import { Dice, randomDiceValue, type DiceValue } from "../../components/dice";
 
-import "./dice-test-styles.css";
+import "./skill-test-styles.css";
 
 function chanceOfAtLeastOneHit(diceCount: number, hitFaces: number): number {
   const missChance = (6 - hitFaces) / 6;
@@ -14,7 +14,7 @@ function hasAtLeastOneHit(dices: number[], hitFaces: number): boolean {
   return dices.some((value) => value >= minSuccessValue);
 }
 
-export function DiceTest() {
+export function SkillTest() {
   const [dices, setDices] = useState<DiceValue[]>([6, 6]);
   const [hitFaces, setHitFaces] = useState(2);
 
@@ -54,33 +54,7 @@ export function DiceTest() {
 
   return (
     <div className="dice-test-container">
-      <div className="dice-test-status">
-        <h1>Teste de Dados</h1>
-
-        <p>Dados: {dices.length}</p>
-        <p>Faces de sucesso: {hitFaces}</p>
-
-        <p className="probability">Chance: {successProbabity.toFixed(2)}%</p>
-
-        {hasRolled && (
-          <p className={hasSuccess ? "result-success" : "result-fail"}>
-            {hasSuccess ? "Sucesso" : "Falha"}
-          </p>
-        )}
-
-        {!hasRolled && <br />}
-      </div>
-
-      <div className="dice-test-row">
-        {dices.map((v, i) => (
-          <Dice key={i} value={v} rolling={rolling} />
-        ))}
-      </div>
-
-      <div className="dice-controls">
-        <button onClick={handleRemoveDice}>-</button>
-        <button onClick={handleAddDice}>+</button>
-      </div>
+      <h1>Teste de Perícia</h1>
 
       <div className="slider-container">
         <label>Faces de sucesso: {hitFaces}</label>
@@ -91,6 +65,31 @@ export function DiceTest() {
           value={hitFaces}
           onChange={(e) => setHitFaces(Number(e.target.value))}
         />
+      </div>
+
+      <div className="dices-container">
+        <p>Dados: {dices.length}</p>
+        <div className="dice-test-row">
+          {dices.map((v, i) => (
+            <Dice key={i} value={v} rolling={rolling} />
+          ))}
+        </div>
+
+        <div className="dice-controls">
+          <button onClick={handleRemoveDice}>-</button>
+          <button onClick={handleAddDice}>+</button>
+        </div>
+      </div>
+
+      <div className={`result-container`}>
+        <p className="probability">Chance: {successProbabity.toFixed(2)}%</p>
+        <div className={hasSuccess ? "result-success" : "result-fail"}>
+          {hasRolled && (
+            <p className={hasSuccess ? "result-success" : "result-fail"}>
+              {hasSuccess ? "Sucesso" : "Falha"}
+            </p>
+          )}
+        </div>
       </div>
 
       <button className="roll-button" disabled={rolling} onClick={rollDices}>

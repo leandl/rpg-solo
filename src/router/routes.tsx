@@ -1,10 +1,12 @@
 import { Battle } from "../screens/battle";
-import { DiceTest } from "../screens/dice-test";
+import { SanityTest } from "../screens/sanity-test";
+import { SkillTest } from "../screens/skill-test";
 import { TypewriterNotebook } from "../screens/typewriter-notebook";
 
 export const routes = {
   battle: () => <Battle />,
-  "dice-test": () => <DiceTest />,
+  "skill-test": () => <SkillTest />,
+  "sanity-test": () => <SanityTest />,
   notes: () => <TypewriterNotebook />,
   "not-found": () => <h1>404</h1>,
 } as const;

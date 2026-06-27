@@ -13,24 +13,17 @@
 
   font-family: Arial;
   color: white;
+  gap: 1rem;
 }
 
-/* STATUS */
-.dice-test-status {
-  text-align: center;
-  margin-bottom: 2rem;
+.result-container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-  height: 130px;
-}
-
-.dice-test-status h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.dice-test-status p {
-  font-size: 1.2rem;
-  margin: 4px 0;
+  font-size: 1.3rem;
 }
 
 /* destaque resultado */
@@ -44,26 +37,29 @@
   font-weight: bold;
 }
 
-/* PROBABILIDADE */
-.probability {
-  margin-top: 8px;
-  font-size: 1rem;
-  opacity: 0.85;
+.dices-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  flex-direction: column;
+}
+
+.dices-container p {
+  font-size: 1.3rem;
 }
 
 /* DADOS */
 .dice-test-row {
   display: flex;
-  gap: 12px;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+
   justify-content: center;
 }
 
 /* CONTROLES (quantidade de dados) */
 .dice-controls {
   display: flex;
-  margin-bottom: 1rem;
 }
 
 .dice-controls button {
@@ -84,13 +80,13 @@
 
 /* SLIDER */
 .slider-container {
-  margin-bottom: 1.5rem;
   text-align: center;
 }
 
 .slider-container label {
   display: block;
-  margin-bottom: 4px;
+
+  font-size: 1.3rem;
 }
 
 .slider-container input {
